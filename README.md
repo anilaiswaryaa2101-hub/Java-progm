@@ -1,53 +1,30 @@
 import java.util.Scanner;
 
-class Employee {
-    int empId;
-    String empName;
-    double salary;
+class Circle {
+    double radius;
 
-    Employee(int id, String name, double sal) {
-        empId = id;
-        empName = name;
-        salary = sal;
+    Circle(double r) {
+        radius = r;
     }
 
-    void displayEmployee() {
-        System.out.println("Employee ID : " + empId);
-        System.out.println("Employee Name : " + empName);
-        System.out.println("Salary : " + salary);
+    void display() {
+        double area = Math.PI * radius * radius;
+        double circumference = 2 * Math.PI * radius;
+
+        System.out.println("Area = " + area);
+        System.out.println("Circumference = " + circumference);
     }
 }
 
-public class EmployeeDemo {
+public class CircleDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter details of Employee 1");
-        System.out.print("ID: ");
-        int id1 = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Name: ");
-        String name1 = sc.nextLine();
-        System.out.print("Salary: ");
-        double sal1 = sc.nextDouble();
+        System.out.print("Enter radius: ");
+        double r = sc.nextDouble();
 
-        System.out.println("\nEnter details of Employee 2");
-        System.out.print("ID: ");
-        int id2 = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Name: ");
-        String name2 = sc.nextLine();
-        System.out.print("Salary: ");
-        double sal2 = sc.nextDouble();
-
-        Employee e1 = new Employee(id1, name1, sal1);
-        Employee e2 = new Employee(id2, name2, sal2);
-
-        System.out.println("\nEmployee 1 Details");
-        e1.displayEmployee();
-
-        System.out.println("\nEmployee 2 Details");
-        e2.displayEmployee();
+        Circle c = new Circle(r);
+        c.display();
 
         sc.close();
     }
