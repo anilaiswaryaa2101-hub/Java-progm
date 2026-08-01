@@ -1,4 +1,3 @@
-# Java-progm
 import java.util.Scanner;
 
 class Employee {
